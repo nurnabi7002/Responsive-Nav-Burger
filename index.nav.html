@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Responsive Nav Bar with Side Bar</title>
+  <style>
+  
+    * {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+  
+}
+
+body {
+  color: #000000;
+}
+
+.navdiv {
+  height: 80px;
+  width: 100%;
+  background-color: #21FFAB;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ 
+}
+
+.ndl {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ndr {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0048B2;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+    color: white;
+    border-width: 50%;
+    border-radius: 25px;
+}
+
+.sidebar a:hover {
+    background-color: #3836FF;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+}
+
+.open-btn {
+    
+    cursor: pointer;
+    color: ;
+    
+}
+
+h1 {
+  padding: 12px;
+}
+
+
+
+img {
+  height: 40px;
+  transition: transform 0.6s linear;
+}
+
+img:hover {
+  transform: rotate(45deg);
+  background-color: transparent;
+}
+
+p {
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+@media (max-width: 504px) {
+    a {
+      display: none;
+    }
+    
+    h1 {
+      margin-left: 25px;
+      text-align: center;
+      
+    }
+    img {
+      margin-right: 50px;
+    }
+    
+    .ndl {
+      width: 70%;
+    }
+    .ndr {
+      width: 40%;
+    }
+}
+
+
+@media (min-width: 505px) {
+  form {
+    display: none;
+  }
+
+}
+
+    
+  </style>
+</head>
+<body>
+  
+<nav>
+  <div class="navdiv">
+    <div class="ndl">
+      <h1>Nurnabi Khan</h1>
+    </div>
+    <div class="ndr">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Service</a>
+    </div>
+    
+    <!-- Side bar-->
+     <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">X</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Service</a>
+    </div>
+
+    <div id="main-content">
+<form onclick="openNav()"> <span class="open-btn"><img src="bars-solid.svg"></span></form>
+    
+  </div>
+</nav>
+
+<p> This a responsive NavBar with SideBar</p>
+ 
+ 
+ <script>
+   
+   function openNav() {
+    document.getElementById("sidebar").style.width = "250px";
+    
+}
+
+function closeNav() {
+    document.getElementById("sidebar").style.width = "0";
+    
+}
+   
+ </script>
+</body>
+</html>
+
